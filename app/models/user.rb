@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   validates_presence_of :first_name, :last_name 
 
+  belongs_to :company 
+
   before_save :generate_authentication_token  
 
   def generate_authentication_token 

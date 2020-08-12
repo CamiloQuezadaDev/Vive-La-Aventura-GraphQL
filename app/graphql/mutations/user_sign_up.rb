@@ -2,6 +2,7 @@ class Mutations::UserSignUp < Mutations::BaseMutation
 
     description "Sign Up to Admin User of the company"
 
+    argument :companyName, String, required: true 
     argument :firstName, String, required: true 
     argument :lastName, String, required: true 
     argument :email, String, required: true 
@@ -15,12 +16,17 @@ class Mutations::UserSignUp < Mutations::BaseMutation
 
 
     def resolve(args)
-        user = User.new(args)
+        company = Company.new(
+            name: args[:company_name]
+        )
+        args.delete(:company_name)
 
-        if user.save! 
+        user = company.users.new(args)
+
+        if company.save! 
             user.add_role :admin
         else  
-            raise ActiveRecord::RecordInvalid, user 
+            raise ActiveRecord::RecordInvalid, company 
         end
 
         Mutations::MutationResult.call(
