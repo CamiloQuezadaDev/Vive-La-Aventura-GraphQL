@@ -7,5 +7,11 @@ module Types
         context[:current_user]
     end
 
+    field :users, [Types::UserType], null: true 
+
+    def users 
+      User.all
+    end
+
   end
 end
