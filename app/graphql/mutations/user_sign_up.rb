@@ -18,9 +18,11 @@ class Mutations::UserSignUp < Mutations::BaseMutation
 
     def resolve(args)
         company = Company.new(
-            name: args[:company_name]
+            name: args[:company_name],
+            service_id: args[:service_id]
         )
         args.delete(:company_name)
+        args.delete(:service_id)
 
         user = company.users.new(args)
 
