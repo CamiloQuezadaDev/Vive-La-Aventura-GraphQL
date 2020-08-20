@@ -7,11 +7,12 @@ module Types
         context[:current_user]
     end
 
-    field :users, [Types::UserType], null: true 
+    field :services , [Types::ServiceType], null: true 
 
-    def users 
-      User.all
-    end
+    def services 
+      Service.all 
+    end 
 
+    
   end
 end
