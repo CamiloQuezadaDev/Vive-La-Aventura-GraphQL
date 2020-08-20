@@ -3,9 +3,10 @@ class Mutations::UserSignUp < Mutations::BaseMutation
     description "Sign Up to Admin User of the company"
 
     argument :companyName, String, required: true 
+    argument :serviceId, ID, required: true 
     argument :firstName, String, required: true 
     argument :lastName, String, required: true 
-    argument :email, String, required: true 
+    argument :email, String, required: true
     argument :password, String, required: true 
 
 
