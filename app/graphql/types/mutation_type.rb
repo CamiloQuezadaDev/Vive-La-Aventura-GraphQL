@@ -4,5 +4,6 @@ module Types
     field :user_sign_up, mutation: Mutations::UserSignUp
     field :user_sign_in, mutation: Mutations::UserSignIn 
     
+    field :create_subsidiary, mutation: Mutations::CreateSubsidiary
   end
 end

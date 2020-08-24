@@ -9,7 +9,8 @@ class GraphqlController < ApplicationController
     query = params[:query]
     operation_name = params[:operationName]
     context = {
-      current_user: current_user 
+      current_user: current_user,
+      current_company: current_user.nil? ? nil : current_user.company 
     }
     result = ViveLaAventuraGraphqlSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result

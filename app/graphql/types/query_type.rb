@@ -12,7 +12,6 @@ module Types
     def services 
       Service.all 
     end 
-
     
   end
 end
