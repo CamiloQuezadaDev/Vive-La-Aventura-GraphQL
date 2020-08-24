@@ -1,5 +1,6 @@
 class Company < ApplicationRecord
     has_many :users, dependent: :destroy 
+    has_many :subsidaries, dependent: :destroy 
 
     belongs_to :service 
 
