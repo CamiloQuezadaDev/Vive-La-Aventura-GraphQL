@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_164204) do
+ActiveRecord::Schema.define(version: 2020_08_24_170501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.float "lat"
+    t.float "lng"
+    t.string "city"
+    t.string "locality"
+    t.string "line1"
+    t.bigint "subsidiary_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["subsidiary_id"], name: "index_addresses_on_subsidiary_id"
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -72,6 +84,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_164204) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "addresses", "subsidiaries"
   add_foreign_key "companies", "services"
   add_foreign_key "subsidiaries", "companies"
   add_foreign_key "users", "companies"
