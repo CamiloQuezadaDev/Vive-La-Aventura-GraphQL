@@ -21,7 +21,7 @@ class Mutations::CreateSubsidiary < Mutations::BaseMutation
         end
 
         unless context[:current_user].admin?
-            raise GraphQL::ExecutionError, "Sign in to do this action"    
+            raise GraphQL::ExecutionError, "You do not have permission"   
         end
 
         subsidiary = Subsidiary.new(
