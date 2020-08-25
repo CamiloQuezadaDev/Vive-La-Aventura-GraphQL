@@ -10,8 +10,10 @@ module Types
     field :services , [Types::ServiceType], null: true 
 
     def services 
+      
       Service.all 
+      
     end 
-    
+
   end
 end

@@ -6,6 +6,7 @@ module Types
     
     field :create_subsidiary, mutation: Mutations::CreateSubsidiary
     field :update_subsidiary, mutation: Mutations::UpdateSubsidiary 
+    field :delete_subsidiary, mutation: Mutations::DeleteSubsidiary 
     
   end
 end
