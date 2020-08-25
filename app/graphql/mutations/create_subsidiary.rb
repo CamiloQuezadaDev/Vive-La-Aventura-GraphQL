@@ -17,11 +17,11 @@ class Mutations::CreateSubsidiary < Mutations::BaseMutation
     def resolve(args)
 
         unless context[:current_user]
-            raise Exception, "Sign in to do this action"
+            raise GraphQL::ExecutionError, "Sign in to do this action"
         end
 
-        unless context[:current_user].admin? 
-            raise Exception, "You do not have permission"
+        unless context[:current_user].admin?
+            raise GraphQL::ExecutionError, "Sign in to do this action"    
         end
 
         subsidiary = Subsidiary.new(
@@ -45,7 +45,7 @@ class Mutations::CreateSubsidiary < Mutations::BaseMutation
         rescue ActiveRecord::RecordInvalid => invalid 
             return { errors: invalid.record.errors.full_messages, success: false }
 
-        rescue Exception => e 
+        rescue GraphQL::ExecutionError => e 
             return {errors: e.message.split(","), success: false }
     end
 
