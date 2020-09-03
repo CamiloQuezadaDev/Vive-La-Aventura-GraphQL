@@ -1,9 +1,9 @@
 module Types
   class QueryType < Types::BaseObject
 
-    field :current_user, Types::UserType, null: true 
+    field :me, Types::UserType, null: true 
 
-    def current_user
+    def me
         context[:current_user]
     end
 
