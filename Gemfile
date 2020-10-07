@@ -11,6 +11,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 
 gem 'graphql', '1.9.17'
+
 gem 'graphiql-rails', '1.7.0', group: :development
 
 gem 'devise', '~> 4.2'
