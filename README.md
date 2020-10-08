@@ -1,24 +1,7 @@
-# README
+## <a name="production-endpoint"></a> Production endpoint:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you want to try out the graphql-ruby-blog on production with your favorite IDE like GraphQL Playground or Graphiql App use this endpoint: 
+```
+https://vive-la-aventura-graphql.herokuapp.com/graphql
+```
+&nbsp;
