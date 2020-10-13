@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do  
-        origins Rails.env.production? ? 'https://vive-la-aventura-react-ce4bzuzlz.vercel.app' :  ['http://127.0.0.1:3001', 'http://localhost:3001']
+        origins Rails.env.production? ? 'https://vive-la-aventura-react.vercel.app' :  ['http://127.0.0.1:3001', 'http://localhost:3001']
 
         resource '*',
         headers: :any,
