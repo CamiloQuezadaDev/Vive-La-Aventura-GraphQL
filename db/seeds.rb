@@ -1,4 +1,3 @@
-
 unless Service.any? 
     Service.create!(name:"Turismo")
     Service.create!(name:"Alojamiento")
@@ -6,3 +5,5 @@ unless Service.any?
     Service.create!(name:"Diversión")
     puts "Services created"
 end 
+
+
